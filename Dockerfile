@@ -36,7 +36,7 @@ COPY clean-logs.sh /clean-logs.sh
 # Add startup script
 COPY virtuoso.sh /virtuoso.sh
 
-VOLUME /data
+# VOLUME /data
 WORKDIR /data
 EXPOSE 8890
 EXPOSE 1111
