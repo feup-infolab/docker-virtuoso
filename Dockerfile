@@ -41,4 +41,9 @@ WORKDIR /data
 EXPOSE 8890
 EXPOSE 1111
 
+# put there the script to wait for proper virtuoso bootup and make it runnable
+COPY ./do_what_dockerfile_should.sh /do_what_dockerfile_should.sh
+RUN chmod ugo+x /do_what_dockerfile_should.sh
+RUN ls -la /
+
 CMD ["/bin/bash", "/virtuoso.sh"]
