@@ -35,8 +35,11 @@ function wait_for_server_to_boot_on_port()
     fi
 }
 
-#install git, curl
+# install git, curl
 apt-get update && apt-get install -y -qq git curl
+
+# boot up virtuoso
+/virtuoso.sh &
 
 # wait for virtuoso to boot..
 wait_for_server_to_boot_on_port 127.0.0.1 8890
