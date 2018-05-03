@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
-# Set Virtuoso commit SHA to Virtuoso 7.2.4 release (25/04/2016)
-ENV VIRTUOSO_COMMIT 96055f6a70a92c3098a7e786592f4d8ba8aae214
+# Set Virtuoso commit SHA to Virtuoso Merge branch 'feature/2018_04_04_fix_bug18232' into develop/7 (April 2018)
+ENV VIRTUOSO_COMMIT f46a3f7213848499a06109f86a0a86058b10b194
 
 # Build virtuoso from source and clean up afterwards
 RUN apt-get update \
@@ -45,6 +45,9 @@ EXPOSE 1111
 COPY ./do_what_dockerfile_should.sh /do_what_dockerfile_should.sh
 RUN chmod ugo+x /do_what_dockerfile_should.sh
 RUN /do_what_dockerfile_should.sh
+RUN sync
+RUN touch /maria.txt
+RUN touch /data/maria.txt
 RUN ls -la /
 
 CMD ["/bin/bash", "/virtuoso.sh"]
