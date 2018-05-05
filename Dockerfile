@@ -45,9 +45,6 @@ EXPOSE 1111
 COPY ./do_what_dockerfile_should.sh /do_what_dockerfile_should.sh
 RUN chmod ugo+x /do_what_dockerfile_should.sh
 RUN /do_what_dockerfile_should.sh
-RUN sync
-RUN touch /maria.txt
-RUN touch /data/maria.txt
 RUN ls -la /
 
 CMD ["/bin/bash", "/virtuoso.sh"]
