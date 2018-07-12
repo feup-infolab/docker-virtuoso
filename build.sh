@@ -38,7 +38,7 @@ function wait_for_server_to_boot_on_port()
 # Constants
 
 CONTAINER_NAME="virtuoso-dendro"
-CONTAINER_TAG="7.2.4-for-dendro-0.3"
+CONTAINER_TAG="7.2.4-for-dendro-0.4"
 LOCAL_TAG="virtuoso:$CONTAINER_TAG"
 COMMITTED_IMAGE_TAG="virtuoso-loaded-with-ontologies"
 REPOSITORY_TAG="joaorosilva/virtuoso:$CONTAINER_TAG"
